@@ -1,0 +1,15 @@
+
+.leftbarFriend {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+
+}
+
+.leftbarFriendImage {
+    width:23px;
+    height: 23px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}

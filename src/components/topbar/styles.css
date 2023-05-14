@@ -1,0 +1,225 @@
+/* Default styles for all screens */
+.topbarContanier {
+    height: 3.5rem;
+    width: 100%;
+    min-width: 100%;
+    background-color: #1877f2;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    overflow: hidden;
+}
+
+.topbarLeft {
+    flex:3;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.burgerMenu {
+    display: none;
+}
+
+.leftfromTop {
+    display: none;
+}
+
+@media  (max-width: 680px) {
+
+    .topbarContanier {
+        overflow: hidden;
+        min-width:555px;
+
+    }
+    .burgerMenu {
+        display:inline-block;
+        margin-top: 15px;
+        margin-left: 20px;
+        color:#1877f2;
+    } 
+    .burgerMenu:hover + .logo  {
+        color:rgb(29, 21, 11);
+      
+    } 
+
+    .burgerMenu:hover + .leftfromTop  {
+        display: flex;
+      
+    }
+
+
+    .topbarCenter {
+        flex:1;
+        margin: 10px;
+        min-width: 25%;
+
+    }
+
+    .topbarIcon {
+        display: none;
+      
+    }
+    .topbarLinks {
+        display: none;
+    }
+
+
+
+}
+
+
+
+.logo {
+    font-size: 24px;
+    margin-left: 1.3rem;
+    font-weight: bold;
+    color:white;
+    cursor: pointer;
+
+}
+
+.topbarCenter {
+    flex:5;
+}
+
+.searchbar {
+    width:100%; 
+    height: 30px;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.searchIcon {
+    font-size:20px !important;
+    margin-left: .7rem;
+}
+
+
+.searchInput {
+    border:none;
+    width:70%;
+}
+
+.searchInput:focus{
+    outline: none; 
+}
+
+.topbarRigth {
+    flex:8;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color:white;
+}
+
+.topbarLink {
+    margin-right: 10px;
+    font-size:14px;
+    cursor: pointer;
+}
+
+.topbarIcon {
+    display: flex;
+}
+
+.topbarIconItem {
+    margin-right: 15px;
+    cursor: pointer;
+    position: relative;
+
+}
+
+.topbarIconBadge {
+    width:15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 50%;
+    color:white;
+    position: absolute;
+    top:-5px;
+    right: -5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+
+}
+
+
+.topbarImg {
+    width:32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+
+/* Styles for screens smaller than 768px */
+
+/*
+@media only screen and (max-width: 767px) {
+    .topbarContanier {
+        height: 3rem;
+    }
+
+    .logo {
+        margin-left: 1rem;
+        font-size: 20px;
+    }
+
+    .searchInput {
+        width: 60%;
+    }
+
+    .topbarLink {
+        font-size: 12px;
+    }
+
+    .topbarIconItem {
+        margin-right: 10px;
+    }
+
+    .topbarImg {
+        width: 28px;
+        height: 28px;
+    }
+}
+*/
+
+/* Styles for screens smaller than 576px */
+/*
+@media only screen and (max-width: 575px) {
+    .topbarContanier {
+        height: 2.5rem;
+    }
+
+    .logo {
+        margin-left: 0.5rem;
+        font-size: 18px;
+    }
+
+    .searchInput {
+        width: 50%;
+    }
+
+    .topbarLink {
+        margin-right: 5px;
+        font-size: 10px;
+    }
+
+    .topbarIconItem {
+        margin-right: 5px;
+    }
+
+    .topbarImg {
+        width: 24px;
+        height: 24px;
+    }
+}
+*/
