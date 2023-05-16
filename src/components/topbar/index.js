@@ -6,16 +6,15 @@ import ChatIcon from '@mui/icons-material/Chat';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MenuIcon from '@mui/icons-material/Menu';
 import LeftbarfromTop from '../../components/LeftbarfromTop'
-
 export default function index() {
   return (
     <>
     <div className="topbarContanier">
         <div className="topbarLeft">
- 
+       
             <span className="logo">Facebook</span>
 
-
+            
         </div>
         
         <div className="topbarCenter">
@@ -57,9 +56,10 @@ export default function index() {
         </div>
        
     </div>
+
     <div className='burgerMenu'>
               <MenuIcon/>
-            </div>
+    </div>
     <div class="leftfromTop">
         <LeftbarfromTop/>
     </div>
