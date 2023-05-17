@@ -11,17 +11,41 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Guard, { LoginGuard } from "./Gurd";
 
 
 function App() {
+
+
+
   return (
     <>
     <Router>
       <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/profile" element={<Profile/>}/>
+        <Route path="/home" element={
+        // <Guard>
+
+         <Home/>
+       // </Guard>
+
+        }
+        />
+        <Route path="/profile" element={
+         // <Guard>
+
+        <Profile/>
+       // </Guard>
+
+        }
+        />
         <Route path="/register" element={<Register/>}/>
-        <Route path="/login" element={<LogIn/>}/>
+        <Route path="/" element={
+          <LoginGuard>
+             <LogIn/>
+          </LoginGuard>
+
+      }
+        />
 
 
 

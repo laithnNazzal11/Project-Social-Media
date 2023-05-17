@@ -6,13 +6,26 @@ import ChatIcon from '@mui/icons-material/Chat';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MenuIcon from '@mui/icons-material/Menu';
 import LeftbarfromTop from '../../components/LeftbarfromTop'
-export default function index() {
+import { useNavigate } from "react-router-dom";
+
+export default function Index() {
+    const navigate = useNavigate();
+
+    const goToProfilePage = () => {
+      navigate("/profile");
+    };
+
+    const navigatee = useNavigate();
+
+    const goToHomePage = () => {
+      navigatee("/home");
+    };
   return (
     <>
     <div className="topbarContanier">
         <div className="topbarLeft">
        
-            <span className="logo">Facebook</span>
+            <span className="logo" onClick={goToHomePage}>Facebook</span>
 
             
         </div>
@@ -51,7 +64,7 @@ export default function index() {
                 </div>
             </div>
 
-             <img src="/assest/person/1.jpeg" alt="" className="topbarImg"></img>   
+             <img src="/assest/person/1.jpeg" alt="" className="topbarImg" onClick={goToProfilePage}></img>   
            
         </div>
        

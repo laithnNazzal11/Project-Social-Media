@@ -1,7 +1,34 @@
 import React from 'react'
 import './styles.css'
+import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
-export default function index() {
+import {createUserWithEmailAndPassword} from "firebase/auth"
+import {auth} from "../../firebase-config"
+export default function Index() {
+  
+  const navigate = useNavigate();
+
+  const goToLoginPage = () => {
+    navigate("/");
+  };
+
+  const [registerEmail, setregisterEmailEmail] = useState("")
+  const [registerEmailPassword, setregisterEmailPassword] = useState("")
+
+  const register = async ()=> {
+    try {
+      const user = await createUserWithEmailAndPassword
+         (auth,
+         registerEmail,
+         registerEmailPassword);
+      console.log(user)
+    }
+    catch (error){
+      console.log(error.massage)
+    }
+
+  }
   return (
     <div className='login'>
         <div className="loginWrapper">
@@ -15,13 +42,19 @@ export default function index() {
 
            <div className='loginRigth'>
              <div class="loginBox">
-                <input placeholder="Email" className='loginInput'/>
+                <input placeholder="Email" className='loginInput'
+                 onChange={(event)=>{setregisterEmailEmail(event.target.value)}}/>
+        
                 <input placeholder="Username" className='loginInput'/>
-                <input placeholder="Password" className='loginInput'/>
-                <input placeholder="Password Again" className='loginInput'/>
-                <button className='loginButton'>Sign Up</button>
+                <input placeholder="Password" className='loginInput'
+                 onChange={(event)=>{setregisterEmailPassword(event.target.value)}}/>
+                
+                <input placeholder="Password Again" className='loginInput'
+                 onChange={(event)=>{setregisterEmailPassword(event.target.value)}}/>
+                
+                <button className='loginButton' onClick={register}>Sign Up</button>
                 <span className='loginForget'>Forget Paswword ?</span>
-                <button className='loginRegisterButton'>
+                <button className='loginRegisterButton' onClick={goToLoginPage}>
                   Log into Account
                   </button>
 

@@ -1,7 +1,41 @@
 import React from 'react'
 import './styles.css'
+import { useState } from 'react';
+import Home from "../Home"
+import { useNavigate } from "react-router-dom";
+import {signInWithEmailAndPassword} from "firebase/auth"
+import {auth} from "../../firebase-config"
 
-export default function index() {
+export default function Index() {
+  
+  const [loginEmail, setloginEmail] = useState("")
+  const [loginPassword, setloginPassword] = useState("")
+
+  const navigate = useNavigate();
+
+  const goToRegisterPage = () => {
+    navigate("/register");
+  };
+
+
+ 
+  const login = async () => {
+    try {
+      const user = await signInWithEmailAndPassword
+         (auth,
+          loginEmail,
+          loginPassword
+          );
+      console.log(user)
+      return <Home/>
+    }
+    catch (error){
+      console.log(error.massage)
+    }
+
+  }
+
+
   return (
     <div className='login'>
         <div className="loginWrapper">
@@ -15,11 +49,15 @@ export default function index() {
 
            <div className='loginRigth'>
              <div class="loginBox">
-                <input placeholder="Email" className='loginInput'/>
-                <input placeholder="Password" className='loginInput'/>
-                <button className='loginButton'>Log In</button>
+                <input placeholder="Email" className='loginInput'
+                 onChange={(event)=>{setloginEmail(event.target.value)}}/>
+                
+                <input placeholder="Password" className='loginInput'
+                onChange={(event)=>{setloginPassword(event.target.value)}}/>
+
+                <button className='loginButton'onClick={login}>Log In</button>
                 <span className='loginForget'>Forget Paswword ?</span>
-                <button className='loginRegisterButton'>Cerate a New Account</button>
+                <button className='loginRegisterButton' onClick={goToRegisterPage}>Cerate a New Account</button>
 
 
              </div>
