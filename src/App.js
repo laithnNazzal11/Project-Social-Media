@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import LogIn from './pages/login';
 import Register from './pages/register';
 import Profile from './pages/Profile'
+import Chat from "./pages/Chat"
 import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
 import {
   BrowserRouter as Router,
@@ -14,6 +15,7 @@ import {
 import Guard, { LoginGuard } from "./Gurd";
 
 
+
 function App() {
 
 
@@ -22,10 +24,20 @@ function App() {
     <>
     <Router>
       <Routes>
+
         <Route path="/home" element={
         // <Guard>
 
          <Home/>
+       // </Guard>
+       
+
+        }
+        />
+               <Route path="/chat" element={
+        // <Guard>
+
+         <Chat/>
        // </Guard>
 
         }
@@ -34,7 +46,7 @@ function App() {
          // <Guard>
 
         <Profile/>
-       // </Guard>
+        // </Guard>
 
         }
         />

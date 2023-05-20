@@ -84,7 +84,7 @@
 }
 
 .topbarCenter {
-    flex:5;
+    flex:7;
 }
 
 .searchbar {
@@ -112,10 +112,10 @@
 }
 
 .topbarRigth {
-    flex:8;
+    flex:5;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     color:white;
 }
 
@@ -154,6 +154,7 @@
 
 
 .topbarImg {
+    margin-left: 25px;
     width:32px;
     height: 32px;
     border-radius: 50%;

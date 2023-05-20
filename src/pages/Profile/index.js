@@ -18,7 +18,7 @@ export default function index() {
             <div className='profileRigthTop'>
                 <div className='profileCover'>
                 <img className='profileCoverImg' src="assest/post/3.jpeg" alt=""/>
-                <img className='profileUserImg' src="assest/person/7.jpeg" alt=""/>
+                <img className='profileUserImg' src="assest/person/11.png" alt=""/>
 
                 </div>
                 <div className='profileInfo'>

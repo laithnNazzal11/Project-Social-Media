@@ -20,6 +20,12 @@ export default function Index() {
     const goToHomePage = () => {
       navigatee("/home");
     };
+
+    const navigateee = useNavigate();
+
+    const goToChatPage = () => {
+      navigateee("/chat");
+    };
   return (
     <>
     <div className="topbarContanier">
@@ -38,11 +44,7 @@ export default function Index() {
         </div>
 
         <div className="topbarRigth">
-            <div className="topbarLinks">
-                <span className="topbarLink">Homepage</span>
-                <span className="topbarLink">Timeline</span>
-           
-            </div>
+
 
             <div className="topbarIcon">
                 <div className="topbarIconItem">
@@ -52,7 +54,7 @@ export default function Index() {
                 </div>
 
                 <div className="topbarIconItem">
-                    <ChatIcon/>
+                    <ChatIcon onClick={goToChatPage}/>
                     <span className="topbarIconBadge">3</span>
 
                 </div>
@@ -64,7 +66,7 @@ export default function Index() {
                 </div>
             </div>
 
-             <img src="/assest/person/1.jpeg" alt="" className="topbarImg" onClick={goToProfilePage}></img>   
+             <img src="/assest/person/11.png" alt="" className="topbarImg" onClick={goToProfilePage}></img>   
            
         </div>
        

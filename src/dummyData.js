@@ -54,7 +54,9 @@ export const Users = [
 export const Posts = [
   {
     id: 1,
-    desc: "Love For All, Hatred For None.",
+    profilePicture: "assest/person/1.jpeg",
+    username: "Safak Kocaoglu",
+    desc: "laith",
     photo: "/assest/post/1.jpeg",
     date: "5 mins ago",
     userId: 1,

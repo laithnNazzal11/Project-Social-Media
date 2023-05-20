@@ -1,9 +1,11 @@
 .leftbar {
+    padding-left: 6%;
     flex: 3;
     height: calc(100vh - 50px);
     overflow-y: scroll;
     position: sticky;
     top: 0;
+    color: rgb(73, 73, 73);
 
 }
 ::-webkit-scrollbar {
@@ -39,6 +41,7 @@
 }
 .sidebarIcon {
     margin-right: 15px;
+    cursor: pointer;
 }
 
 .leftbarButton {

@@ -7,6 +7,8 @@ function AccessDenied() {
     navigate("/");
   };
 
+  
+
   return (
     <div>
       Access Denied please login
