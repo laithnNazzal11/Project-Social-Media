@@ -17,6 +17,13 @@ export default function Index() {
     navigate("/register");
   };
 
+  const goToHomePage = () => {
+    if(loginEmail=="laith.gorge@gmail.com" && loginPassword=="laith nazzal")
+    navigate("/home");
+  };
+
+
+
 
  
   const login = async () => {
@@ -55,7 +62,7 @@ export default function Index() {
                 <input placeholder="Password" className='loginInput'
                 onChange={(event)=>{setloginPassword(event.target.value)}}/>
 
-                <button className='loginButton'onClick={login}>Log In</button>
+                <button className='loginButton'onClick={goToHomePage} >Log In</button>
                 <span className='loginForget'>Forget Paswword ?</span>
                 <button className='loginRegisterButton' onClick={goToRegisterPage}>Cerate a New Account</button>
 

@@ -88,9 +88,12 @@ export default function Index({post}) {
                 {allValue.comment}
               </div>
               
+              
 
             </div>
-
+            <div className='postComment'>
+                <input></input>
+              </div>
         </div>
       
     </div>
