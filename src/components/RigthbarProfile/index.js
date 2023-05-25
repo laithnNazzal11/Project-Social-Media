@@ -20,13 +20,13 @@ export default function index() {
 
   const userFriends = [
     { imgSrc: '/assest/person/1.jpeg', name: 'John Center' },
-    { imgSrc: '/assest/person/2.jpeg', name: 'John Center' },
-    { imgSrc: '/assest/person/3.jpeg', name: 'John Center' },
-    { imgSrc: '/assest/person/4.jpeg', name: 'John Center' },
-    { imgSrc: '/assest/person/5.jpeg', name: 'John Center' },
-    { imgSrc: '/assest/person/6.jpeg', name: 'John Center' },
-    { imgSrc: '/assest/person/7.jpeg', name: 'John Center' },
-    { imgSrc: '/assest/person/8.jpeg', name: 'John Center' }
+    { imgSrc: '/assest/person/2.jpeg', name: 'laith nazzal' },
+    { imgSrc: '/assest/person/3.jpeg', name: 'ahmad nazzal' },
+    { imgSrc: '/assest/person/4.jpeg', name: 'rami salaman' },
+    { imgSrc: '/assest/person/5.jpeg', name: 'layan' },
+    { imgSrc: '/assest/person/6.jpeg', name: 'obada mohmmad' },
+    { imgSrc: '/assest/person/7.jpeg', name: 'rasheed kheder' },
+    { imgSrc: '/assest/person/8.jpeg', name: 'hamada ahmad' }
   ];
 
   const userFriendsList = userFriends.map((friend, index) => (

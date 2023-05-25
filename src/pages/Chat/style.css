@@ -72,7 +72,47 @@
     color: rgb(224, 220, 220);
     cursor: default;
   }
+  .chatMenuInput {
+    outline: none;
+  }
+
+  .chatOnline {
+    cursor: pointer;
+  }
   
+  .massage {
+    display: flex;
+    margin-bottom: 15px;
+    align-items: center;
+    border-bottom: 1px solid #b9b9b9;
+  }
+
+  .massage p {
+    background-color: #1877f2;
+    color:white;
+    padding:10px 20px;
+    margin-left: 10px;
+    border-radius: 10px;
+    border-bottom: 1px solid #b9b9b9;
+
+
+    
+   
+  }
+  .rigthbarFollowing{
+    display: flex;
+    margin-top: 3%;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .rigthbarFollowingImg{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+
   @media screen and (max-width: 768px) {
     .chatMenu {
       flex: 1;
