@@ -153,7 +153,19 @@ export default function Index() {
   console.log(allValue)
     
 
-
+  const shareOptions = [
+    { icon: <AddPhotoAlternateIcon htmlColor='tomato' className='shareIcon' />, text: 'photo/video' },
+    { icon: <LabelIcon htmlColor='blue' className='shareIcon' />, text: 'Tag' },
+    { icon: <AddLocationAltIcon htmlColor='green' className='shareIcon' />, text: 'Location' },
+    { icon: <EmojiEmotionsIcon htmlColor='goldenrood' className='shareIcon' />, text: 'Feelings' }
+  ];
+  
+  const shareOptionList = shareOptions.map((option, index) => (
+    <div className='shareOption' key={index}>
+      {option.icon}
+      <span className='shareOptionText'>{option.text}</span>
+    </div>
+  ));
   
   return (
     <>
@@ -174,22 +186,7 @@ export default function Index() {
         <hr className='shareHr'/>
         <div className='shareButtom'>
             <div className='shareOptions'>
-                <div className='shareOption'>
-                    <AddPhotoAlternateIcon htmlColor='tomato' className='shareIcon'  />
-                   <span className='shareOptionText' >photo/veido</span> 
-                </div>
-                <div className='shareOption'>
-                    <LabelIcon  htmlColor='blue' className='shareIcon'/>
-                   <span className='shareOptionText'>Tag</span> 
-                </div>     
-                <div className='shareOption'>
-                    <AddLocationAltIcon  htmlColor='green' className='shareIcon'/>
-                   <span className='shareOptionText'>Location</span> 
-                </div>
-                <div className='shareOption'>
-                    <EmojiEmotionsIcon  htmlColor='goldenrood' className='shareIcon'/>
-                   <span className='shareOptionText'>Feelings</span> 
-                </div>           
+             {shareOptionList}
             </div>
             
             <button className='shareButton' onClick={upPost}  >Share</button>

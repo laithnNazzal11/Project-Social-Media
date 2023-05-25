@@ -30,31 +30,31 @@ export default function Index() {
 
   }
   return (
-    <div className='login'>
-        <div className="loginWrapper">
-            <div className='loginLeft'>
-                <h3 class="loginLogo">Facebook</h3>
-                <span className='loginDesc'>
+    <div className='register'>
+        <div className="registerWrapper">
+            <div className='registerLeft'>
+                <h3 class="registerLogo">Facebook</h3>
+                <span className='registerDesc'>
                     Connect with friends and the world around you on Facebook.
                 </span>
             </div>
        
 
-           <div className='loginRigth'>
-             <div class="loginBox">
-                <input placeholder="Email" className='loginInput'
+           <div className='registerRigth'>
+             <div class="registerBox">
+                <input placeholder="Email" className='registerInput'
                  onChange={(event)=>{setregisterEmailEmail(event.target.value)}}/>
         
-                <input placeholder="Username" className='loginInput'/>
-                <input placeholder="Password" className='loginInput'
+                <input placeholder="Username" className='registerInput'/>
+                <input placeholder="Password" className='registerInput'
                  onChange={(event)=>{setregisterEmailPassword(event.target.value)}}/>
                 
-                <input placeholder="Password Again" className='loginInput'
+                <input placeholder="Password Again" className='registerInput'
                  onChange={(event)=>{setregisterEmailPassword(event.target.value)}}/>
                 
-                <button className='loginButton' onClick={register}>Sign Up</button>
-                <span className='loginForget'>Forget Paswword ?</span>
-                <button className='loginRegisterButton' onClick={goToLoginPage}>
+                <button className='registerButton' onClick={register}>Sign Up</button>
+                <span className='registerForget'>Forget Paswword ?</span>
+                <button className='registerRegisterButton' onClick={goToLoginPage}>
                   Log into Account
                   </button>
 

@@ -1,10 +1,11 @@
 import React from 'react'
 import './styles.css'
-import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Users } from '../../dummyData'
 import { useState,useEffect } from 'react';
 //import {db} from '../../firebase-config'
 import {dataRef} from '../../firebase-config';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+
 
 export default function Index({post}) {
 //post.comment
@@ -75,6 +76,7 @@ export default function Index({post}) {
                 <span className='postText'>{post.desc}</span>
 
                 <img className='postImage' src={post.photo} alt=""/>
+
             </div>
             <div className='postDown'>
               <div className='postBottomLeft'>

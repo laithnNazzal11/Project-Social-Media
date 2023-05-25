@@ -7,6 +7,9 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import MenuIcon from '@mui/icons-material/Menu';
 import LeftbarfromTop from '../../components/LeftbarfromTop'
 import { useNavigate } from "react-router-dom";
+import Topbarleft from './topbarleft'
+import Topbarcenter from './topbarcenter'
+import Topbarrigth from './topbarRigth'
 
 export default function Index() {
     const navigate = useNavigate();
@@ -15,11 +18,8 @@ export default function Index() {
       navigate("/profile");
     };
 
-    const navigatee = useNavigate();
 
-    const goToHomePage = () => {
-      navigatee("/home");
-    };
+ 
 
     const navigateee = useNavigate();
 
@@ -30,41 +30,19 @@ export default function Index() {
     <>
     <div className="topbarContanier">
         <div className="topbarLeft">
-       
-            <span className="logo" onClick={goToHomePage}>Facebook</span>
-
-            
+          <Topbarleft/>
         </div>
         
         <div className="topbarCenter">
-            <div className="searchbar">
-                <SearchIcon className="searchIcon"/>
-                <input className="searchInput" placeholder="Search for frindes,post or video"></input>
-            </div>
+          <Topbarcenter/>
+
         </div>
 
         <div className="topbarRigth">
+          <Topbarrigth/>
 
 
-            <div className="topbarIcon">
-                <div className="topbarIconItem">
-                    <PersonIcon/>
-                    <span className="topbarIconBadge">1</span>
-
-                </div>
-
-                <div className="topbarIconItem">
-                    <ChatIcon onClick={goToChatPage}/>
-                    <span className="topbarIconBadge">3</span>
-
-                </div>
-
-                <div className="topbarIconItem">
-                    <NotificationsIcon/>
-                    <span className="topbarIconBadge">4</span>
-
-                </div>
-            </div>
+            
 
              <img src="/assest/person/11.png" alt="" className="topbarImg" onClick={goToProfilePage}></img>   
            
