@@ -1,7 +1,5 @@
 .homeContainer {
     display: flex;
-    width:100%;
-    min-width:555px;
- 
+    width: 100%;
+    height: auto;
 }
-

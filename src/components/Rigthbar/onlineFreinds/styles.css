@@ -18,10 +18,10 @@
 
 .rigthbarOnline {
     position: absolute;
-    width:10px;
+    width: 10px;
     height: 10px;
     border-radius: 50%;
-    top:-4px;
+    top: -4px;
     left: 25px;
     background-color: rgb(3, 244, 3);
     border: 2px solid white;

@@ -1,0 +1,188 @@
+.story {
+    width: 100%;
+    height: 120px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1877f2;
+
+
+}
+
+.shareWrapper {
+    padding: 10px;
+}
+
+.storyFriends {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.storyImage {
+    position: relative;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    cursor: pointer;
+    border: 5px solid white;
+    transition: all .3s ease-in-out;
+}
+
+.friend {
+    position: relative;
+}
+
+.plus {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    bottom: -10px;
+    right: 35%;
+    background-color: white;
+    color: #1877f2;
+    border-radius: 50%;
+    font-size: 1.3em;
+    border: 5px solid #1877f2;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+
+}
+
+.storyImage::after {
+    content: '+';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+}
+
+.storyImage:hover {
+    border-color: rgb(18, 199, 18);
+    width: 85px;
+    height: 85px;
+
+}
+
+.plus:hover {
+    background-color: rgb(18, 199, 18);
+    color: white;
+    font-size: 1.5em;
+}
+
+
+
+.shareProfileImg {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.shareTop {
+    display: flex;
+    align-items: center;
+
+}
+
+.shareInput {
+    border: none;
+    width: 80%;
+
+}
+
+.shareInput:focus {
+    outline: none;
+
+}
+
+.shareHr {
+    margin: 20px;
+}
+
+.shareButtom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.shareOptions {
+    display: flex;
+    margin-left: 20px;
+
+}
+
+.shareOption {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.shareIcon {
+    font-size: 18px;
+    margin-left: 3px;
+
+}
+
+.shareOptionText {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.shareButton {
+    border: 0;
+    background-color: green;
+    color: white;
+    padding: 7px;
+    border-radius: 10%;
+    font-weight: 500;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.custom-file-input {
+    display: inline-block;
+    width: 95px;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.custom-file-input::before {
+    content: 'photo/videos';
+    display: inline-block;
+    background: linear-gradient(top, #f9f9f9, #e3e3e3);
+    border-radius: 5px;
+    padding: 5px 8px;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+}
+
+.custom-file-input:hover::before {
+    border-color: black;
+}
+
+.custom-file-input:hover::before {
+    border-color: black;
+}
+
+.custom-file-input:active {
+    outline: 0;
+}
+
+.custom-file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}

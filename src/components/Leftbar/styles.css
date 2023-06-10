@@ -1,69 +1,149 @@
 .leftbar {
-    flex: 3;
-    height: calc(100vh - 50px);
-    overflow-y: scroll;
-    position: sticky;
-    top: 0;
+  padding-left: 4%;
+  width: auto;
+  flex: 3;
+  height: calc(100vh - 50px);
+  overflow-y: scroll;
+  position: sticky;
+  top: 50px;
+  color: rgb(73, 73, 73);
+  transition: all .3s ease-in-out;
+
 
 }
+
 ::-webkit-scrollbar {
-    width:5px;
+  width: 5px;
 }
-::-webkit-scrollbar-track {
-    background-color: #f1f1f1;
-}
-::-webkit-scrollbar-thumb {
-    background-color: rgb(179,179,179);
 
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(179, 179, 179);
 }
 
 .leftbarWrapper {
-    padding:20px;
-    position: sticky;
-
- 
+  padding: 20px;
+  position: sticky;
 }
 
 .leftbarList {
-    padding: 0;
-    list-style: none;
-    margin: 0;
-
+  padding: 0;
+  list-style: none;
+  margin: 0;
 }
 
 .leftbarListItem {
+  margin-bottom: 10px;
+}
+
+/* Responsive styles */
+@media (max-width:837px) {
+  .leftbar {
+    overflow-y: hidden;
+
+  }
+
+  .leftbarList {
+    margin-left: -20px;
+
+  }
+
+  .leftbarListItemText {
+    display: none;
+  }
+
+}
+
+@media (max-width:959px) {
+  .leftbar {
+    box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
     display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+    justify-content: center;
+  }
+
+
+  .leftbarList {
+    display: flex;
+    flex-direction: column;
+
+
+  }
+
+  .leftbarButton,
+  .leftbarHr,
+  .leftbatFriendList {
+    display: none;
+  }
 
 }
-.sidebarIcon {
-    margin-right: 15px;
-}
 
-.leftbarButton {
-    width: 150px;
-    border : none;
+@media (max-width: 768px) {
+  .leftbar {
+    overflow-y: none;
+
+
+
+  }
+
+  .leftbarList {
+    display: none;
+  }
+
+  .leftbarListItemText {
+    display: none;
+  }
+
+  .leftbar {
+    flex: 1;
+    padding-left: 20px;
+
+  }
+
+  .leftbarWrapper {
     padding: 10px;
-    border-radius: 5px;
-    font-weight: 500;
+  }
+
+  .leftbarList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+
+  }
+
+  .leftbarListItem {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 759px) {
+  .leftbar {
+    overflow-y: none;
+
+    flex: 1;
+    padding-left: 0;
+    display: none;
+
+  }
 
 }
 
-.leftbarHr {
-    margin : 20px 0;
-}
+@media (max-width: 480px) {
 
-.leftbatFriendList {
-    padding: 0;
-    margin:0;
-    list-style:none;
+  .leftbar {
+    overflow-y: none;
 
-}
+    flex: 1;
+    padding-left: 0;
+    display: none;
 
+  }
 
-@media  (max-width: 680px) {
-    .leftbar {
-        display: none;
-    }
+  .leftbarWrapper {
+    padding: 5px;
+  }
 }

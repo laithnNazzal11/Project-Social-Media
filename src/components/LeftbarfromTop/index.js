@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './styles.css'
-import {Users} from '../../dummyData'
+import { Users } from '../../dummyData'
 import Closefreind from './CloseFriend'
 import FeedIcon from '@mui/icons-material/Feed';
 import ChatIcon from '@mui/icons-material/Chat';
@@ -12,67 +12,71 @@ import GroupIcon from '@mui/icons-material/Group';
 import EventIcon from '@mui/icons-material/Event';
 import GamesIcon from '@mui/icons-material/Games';
 import MenuIcon from '@mui/icons-material/Menu';
-export default function index() {
+import ThemeContext from '../../ThemeContext';
+
+export default function Index() {
+  const { Theme, selectedTheme, setSelectedTheme } = useContext(ThemeContext);
+
   return (
-    
-    <div className='leftbarr'>
-   
-      <div className="leftbarWrapper">
+
+    <div className='leftbarrr' style={{ backgroundColor: Theme.main, color: Theme.secendary }} >
+
+      <div className="leftbarWrapperr">
 
 
-        <ul className="leftbarList">
-         
+        <ul className="leftbarListt">
+
 
 
           <li className="leftbarListItemm">
-            <FeedIcon className="sidebarIcon"/>
-            <span className="leftbarListItemText">Feed</span>
+            <FeedIcon className="sidebarIcon" />
+            <span className="leftbarListItemTextt">Feed</span>
           </li>
 
           <li className="leftbarListItemm">
-            <ChatIcon className="sidebarIcon"/>
-            <span className="leftbarListItemText">Chat</span>
+            <ChatIcon className="sidebarIcon" />
+            <span className="leftbarListItemTextt">Chat</span>
           </li>
 
           <li className="leftbarListItemm">
-            <PlayCircleIcon className="sidebarIcon"/>
-            <span className="leftbarListItemText">Videos</span>
+            <PlayCircleIcon className="sidebarIcon" />
+            <span className="leftbarListItemTextt">Videos</span>
           </li>
 
           <li className="leftbarListItemm">
-            <GroupIcon className="sidebarIcon"/>
-            <span className="leftbarListItemText">Groub</span>
+            <GroupIcon className="sidebarIcon" />
+            <span className="leftbarListItemTextt">Groub</span>
           </li>
 
           <li className="leftbarListItemm">
-            <BookmarkIcon className="sidebarIcon"/>
-            <span className="leftbarListItemText">Bookmarks</span>
+            <BookmarkIcon className="sidebarIcon" />
+            <span className="leftbarListItemTextt">Bookmarks</span>
           </li>
 
           <li className="leftbarListItemm">
-            <ContactSupportIcon className="sidebarIcon"/>
-            <span className="leftbarListItemText">Questions</span>
+            <ContactSupportIcon className="sidebarIcon" />
+            <span className="leftbarListItemTextt">Questions</span>
           </li>
 
           <li className="leftbarListItemm">
-            <WorkIcon className="sidebarIcon"/>
-            <span className="leftbarListItemText">Jops</span>
+            <WorkIcon className="sidebarIcon" />
+            <span className="leftbarListItemTextt">Jops</span>
           </li>
 
           <li className="leftbarListItemm">
-            <EventIcon className="sidebarIcon"/>
-            <span className="leftbarListItemText">Event</span>
+            <EventIcon className="sidebarIcon" />
+            <span className="leftbarListItemTextt">Event</span>
           </li>
 
           <li className="leftbarListItemm">
-            <GamesIcon className="sidebarIcon"/>
-            <span className="leftbarListItemText">Courses</span>
+            <GamesIcon className="sidebarIcon" />
+            <span className="leftbarListItemTextt">Courses</span>
           </li>
 
         </ul>
-        
+
       </div>
-   
+
     </div>
   )
 }

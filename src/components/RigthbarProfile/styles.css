@@ -1,5 +1,5 @@
-.rigthbar{
-    flex:3.5;
+.rigthbar {
+    flex: 3.5;
     height: calc(100vh - 50px);
 }
 
@@ -37,7 +37,7 @@
     font-weight: 500;
     margin-right: 15px;
     color: #555;
-     
+
 }
 
 .rightbarInfoValue {
@@ -45,18 +45,27 @@
 
 }
 
-.rgihtbarFollowings {
+
+.rgihtbarFollowingss {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
 }
 
 .rigthbarFollowing {
+    margin-left: 20px;
+    margin-bottom: 20px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    height: 100%;
+
 }
-.rigthbarFollowingImg{
-    width:100px;
+
+.rigthbarFollowingImg {
+    width: 100px;
     height: 100px;
     object-fit: cover;
     border-radius: 5px;
@@ -64,21 +73,50 @@
 
 }
 
-@media  (max-width: 680px) {
-     .home {
+@media (max-width: 1050px) {
+
+    .rigthbarFollowingImg {
+        width: 60px;
+        height: 60px;
+    }
+
+}
+
+@media (max-width: 1245px) {
+    .rigthbarFollowing {
+        width: 35%;
+    }
+
+
+}
+
+@media (max-width: 680px) {
+    .rigthbarFollowing {
+        width: 20%;
+    }
+}
+
+@media (max-width: 503px) {
+    .rigthbarFollowing {
+        width: 25%;
+    }
+}
+
+@media (max-width: 680px) {
+    .home {
         display: none;
     }
-    .rigthbar{
 
-    }
+    .rigthbar {}
 
-   
-    .rightbarInfoItem,.rigthbarTitle {
+
+    .rightbarInfoItem,
+    .rigthbarTitle {
         display: flex;
         justify-content: center;
         align-items: center;
         margin-left: 10px;
-        
+
 
     }
 

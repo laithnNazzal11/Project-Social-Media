@@ -1,86 +1,75 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './styles.css'
 import OnlineFreind from '../Rigthbar/onlineFreinds'
-import {Users} from '../../dummyData'
+import { Users } from '../../dummyData'
+import ThemeContext from '../../ThemeContext';
 
-export default function index({profile}) {
- 
+export default function Index() {
+  const rightbarInfo = [
+    { key: 'City:', value: 'New York' },
+    { key: 'From:', value: 'Madrid' },
+    { key: 'Relationship:', value: 'Single' }
+  ];
+
+  const rightbarInfoItems = rightbarInfo.map((info, index) => (
+    <div className='rightbarInfoItem' key={index}>
+      <span className='rightbarInfoKey'>{info.key}</span>
+      <span className='rightbarInfoValue'>{info.value}</span>
+    </div>
+  ));
+
+
+  const userFriends = [
+    { imgSrc: '/assest/person/1.jpeg', name: 'John Center' },
+    { imgSrc: '/assest/person/2.jpeg', name: 'laith nazzal' },
+    { imgSrc: '/assest/person/3.jpeg', name: 'ahmad nazzal' },
+    { imgSrc: '/assest/person/4.jpeg', name: 'rami salaman' },
+    { imgSrc: '/assest/person/5.jpeg', name: 'layan' },
+    { imgSrc: '/assest/person/6.jpeg', name: 'obada mohmmad' },
+    { imgSrc: '/assest/person/7.jpeg', name: 'rasheed kheder' },
+    { imgSrc: '/assest/person/8.jpeg', name: 'hamada ahmad' }
+  ];
+
+  const userFriendsList = userFriends.map((friend, index) => (
+
+
+    <div className='rigthbarFollowing' key={index}>
+      <img className='rigthbarFollowingImg' alt='' src={friend.imgSrc}></img>
+      <span className='rigthbarFollowingName'>{friend.name}</span>
+    </div>
+
+  ));
 
   const ProfileRigthbar = () => {
+
     return (
       <>
-      <h4 className='rigthbarTitle'>User information</h4>
-      <div className='rightbarInfo'>
-
-        <div className='rightbarInfoItem'>
-          <span className='rightbarInfoKey'>City:</span>
-          <span className='rightbarInfoValue'>New York</span>
+        <h4 className='rigthbarTitle'>User information</h4>
+        <div className='rightbarInfo'>
+          {rightbarInfoItems}
+          <h4 className='rigthbarTitle'>User Friends</h4>
+          <div className='rgihtbarFollowingss'>
+            {userFriendsList}
+          </div>
         </div>
 
-        <div className='rightbarInfoItem'>
-          <span className='rightbarInfoKey'>From:</span>
-          <span className='rightbarInfoValue'>Madrid</span>
-        </div>
 
-        <div className='rightbarInfoItem'>
-          <span className='rightbarInfoKey'>Relationship:</span>
-          <span className='rightbarInfoValue'>Single</span>
-        </div>
-      </div>
-      <h4 className='rigthbarTitle'>User Freinds</h4>
-      
-      <div className='rgihtbarFollowings'>
-        <div className='rigthbarFollowing'>
-          <img className='rigthbarFollowingImg' atl="" src="/assest/person/1.jpeg"></img>
-          <span className='rigthbarFollowingName'>John Center</span>
-        </div>
-        
-        <div className='rigthbarFollowing'>
-          <img className='rigthbarFollowingImg' atl="" src="/assest/person/2.jpeg"></img>
-          <span className='rigthbarFollowingName'>John Center</span>
-        </div>
-
-        <div className='rigthbarFollowing'>
-          <img className='rigthbarFollowingImg' atl="" src="/assest/person/3.jpeg"></img>
-          <span className='rigthbarFollowingName'>John Center</span>
-        </div>
-
-        <div className='rigthbarFollowing'>
-          <img className='rigthbarFollowingImg' atl="" src="/assest/person/4.jpeg"></img>
-          <span className='rigthbarFollowingName'>John Center</span>
-        </div>
-        <div className='rigthbarFollowing'>
-          <img className='rigthbarFollowingImg' atl="" src="/assest/person/5.jpeg"></img>
-          <span className='rigthbarFollowingName'>John Center</span>
-        </div>
-        <div className='rigthbarFollowing'>
-          <img className='rigthbarFollowingImg' atl="" src="/assest/person/6.jpeg"></img>
-          <span className='rigthbarFollowingName'>John Center</span>
-        </div>
-        <div className='rigthbarFollowing'>
-          <img className='rigthbarFollowingImg' atl="" src="/assest/person/7.jpeg"></img>
-          <span className='rigthbarFollowingName'>John Center</span>
-        </div>
-                <div className='rigthbarFollowing'>
-          <img className='rigthbarFollowingImg' atl="" src="/assest/person/8.jpeg"></img>
-          <span className='rigthbarFollowingName'>John Center</span>
-        </div>
-      </div>
 
       </>
     )
   }
 
+  const { Theme, selectedTheme, setSelectedTheme } = useContext(ThemeContext);
 
   return (
     <>
-    
-    <div className='rigthbarr'>
-      <div className='rigthbarWrapper'>
-        <ProfileRigthbar/> 
 
+      <div className='rigthbarr' style={{ backgroundColor: Theme.main, color: Theme.secendary }}>
+        <div className='rigthbarWrapper'>
+          <ProfileRigthbar />
+
+        </div>
       </div>
-    </div>
 
 
     </>
