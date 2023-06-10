@@ -13,12 +13,25 @@ A social media platform built with [insert languages/technologies used].
 
 ## Description
 
-[Provide a brief overview of your social media platform. Explain what it does and its purpose.]
+This social media platform is a modern and interactive online community that allows users to connect, communicate, and share their thoughts, ideas, and experiences. With a user-friendly interface and a range of engaging features, our platform aims to provide a seamless and enjoyable social networking experience.
 
 ## Features
 
-- [List the main features of your social media platform.]
-- [E.g., User registration and authentication, profile creation, posting content, liking and commenting on posts, following other users, messaging, etc.]
+- **Like:** Users can like posts to show their appreciation or interest.
+
+- **Comment:** Users can comment on posts to engage in conversations and discussions.
+
+- **Post:** Users can create and share their own posts with text, images, or videos.
+
+- **Send Message:** Users can send private messages to other users for one-on-one communication.
+
+- **Delete Message:** Users can delete their own messages from their chat history.
+
+- **Dark Mode:** The platform offers a dark mode option for a more comfortable viewing experience in low-light environments.
+
+- **Success Alerts:** Users receive alerts or notifications to indicate successful actions, such as successful post creation or account updates.
+
+- **Change Photo:** Users can update their profile photo or avatar.
 
 ## Installation
 
