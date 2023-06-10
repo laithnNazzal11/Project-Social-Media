@@ -9,22 +9,22 @@ import ProfilePictureContext from '../Profile/ProfilePictureContext'
 import ThemeContext from '../../ThemeContext';
 
 export default function Index() {
-  const {Theme,selectedTheme,setSelectedTheme} = useContext(ThemeContext);
+  const { Theme, selectedTheme, setSelectedTheme } = useContext(ThemeContext);
 
   return (
 
-    <div className='allNovatication'  style={{backgroundColor:Theme.main,color:Theme.secendary}}>
-         
-      <Topbar/>
-      <div className="Notifications">
-        <Leftbar/>
-        <Notifications/>
-        
-        <RigthbarHomePage/>
+    <div className='allNovatication' style={{ backgroundColor: Theme.main, color: Theme.secendary }}>
 
-      
-      
-    </div>
+      <Topbar />
+      <div className="Notifications">
+        <Leftbar />
+        <Notifications />
+
+        <RigthbarHomePage />
+
+
+
+      </div>
     </div>
 
   )

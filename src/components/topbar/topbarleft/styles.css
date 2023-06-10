@@ -1,0 +1,10 @@
+.leftBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconMood {
+    margin-left: 10px;
+    margin-right: 10px;
+}

@@ -6,7 +6,7 @@ import { Users } from '../../dummyData'
 import { useNavigate } from "react-router-dom";
 import "firebase/compat/firestore";
 import firebase from "firebase/compat/app";
-import { useState,useEffect,useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import ThemeContext from '../../ThemeContext';
 
 
@@ -35,7 +35,7 @@ export default function Index() {
 
   const sendMessage = () => {
     const newMessage = { text: message, timestamp: Date.now() };
-  
+
     firestore
       .collection('messages')
       .add(newMessage)
@@ -60,34 +60,34 @@ export default function Index() {
         console.error('Error fetching messages:', error);
       }
     };
-  
+
     fetchMessages();
   }, []);
 
-const deleteMessage = (messageId) => {
-  firestore
-    .collection('messages')
-    .doc(messageId)
-    .delete()
-    .then(() => {
-      console.log('Message deleted successfully');
-      // Update the messages state by filtering out the deleted message
-      setMessages(messages.filter((msg) => msg.id !== messageId));
-    })
-    .catch((error) => {
-      console.error('Error deleting message:', error);
-    });
-};
-const profilePictureContext = useContext(ProfilePictureContext);
-const {Theme,selectedTheme,setSelectedTheme} = useContext(ThemeContext);
+  const deleteMessage = (messageId) => {
+    firestore
+      .collection('messages')
+      .doc(messageId)
+      .delete()
+      .then(() => {
+        console.log('Message deleted successfully');
+        // Update the messages state by filtering out the deleted message
+        setMessages(messages.filter((msg) => msg.id !== messageId));
+      })
+      .catch((error) => {
+        console.error('Error deleting message:', error);
+      });
+  };
+  const profilePictureContext = useContext(ProfilePictureContext);
+  const { Theme, selectedTheme, setSelectedTheme } = useContext(ThemeContext);
 
   return (
     <>
       <Topbar />
-      <div className="messenger" style={{backgroundColor:Theme.main,color:Theme.secendary}}>
+      <div className="messenger" style={{ backgroundColor: Theme.main, color: Theme.secendary }}>
         <div className="chatMenu">
           <div className="chatMenuWrapper">
-            <input placeholder="Search for friends" className="chatMenuInput"  style={{backgroundColor:Theme.main,color:Theme.secendary}}/>
+            <input placeholder="Search for friends" className="chatMenuInput" style={{ backgroundColor: Theme.main, color: Theme.secendary }} />
           </div>
         </div>
         <div className="chatBox">
@@ -103,14 +103,14 @@ const {Theme,selectedTheme,setSelectedTheme} = useContext(ThemeContext);
                   {messages.map((msg, index) => (
                     <div class="massage" key={msg.id}>
                       <div className='imgp'>
-                      <img className='shareProfileImg' src={profilePictureContext.profilePicture} alt="" />
-                      <p key={index} style={{backgroundColor:Theme.third}}>{msg.text}</p>
+                        <img className='shareProfileImg' src={profilePictureContext.profilePicture} alt="" />
+                        <p key={index} style={{ backgroundColor: Theme.third }}>{msg.text}</p>
                       </div>
-                      <div> 
-                      <button className="deleteButton" onClick={() => deleteMessage(msg.id) } style={{backgroundColor:Theme.third}}>
-                        Delete
-                     </button>
-                     </div>
+                      <div>
+                        <button className="deleteButton" onClick={() => deleteMessage(msg.id)} style={{ backgroundColor: Theme.third }}>
+                          Delete
+                        </button>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -122,9 +122,9 @@ const {Theme,selectedTheme,setSelectedTheme} = useContext(ThemeContext);
                   type="text"
                   value={message}
                   onChange={handleMessageChange}
-                  style={{backgroundColor:Theme.main,color:Theme.secendary}}
+                  style={{ backgroundColor: Theme.main, color: Theme.secendary }}
                 ></textarea>
-                <button className="chatSubmitButton" onClick={sendMessage} style={{backgroundColor:Theme.third}}>
+                <button className="chatSubmitButton" onClick={sendMessage} style={{ backgroundColor: Theme.third }}>
                   Send
                 </button>
 
@@ -135,14 +135,14 @@ const {Theme,selectedTheme,setSelectedTheme} = useContext(ThemeContext);
         </div>
         <div className="chatOnline">
           <div className="chatOnlineWrapper">
-            <ul className="leftbatFriendList" style={{borderColor:Theme.main,color:Theme.secendary}}>
+            <ul className="leftbatFriendList" style={{ borderColor: Theme.main, color: Theme.secendary }}>
               {Users.map((u) => (
-                <Closefreind onClick={() => handleUserClick(u)} key={u.id} user={u} style={{borderColor:Theme.main,color:Theme.secendary}}/>
+                <Closefreind onClick={() => handleUserClick(u)} key={u.id} user={u} style={{ borderColor: Theme.main, color: Theme.secendary }} />
               ))}
             </ul>
           </div>
         </div>
       </div>
-      </>
+    </>
   )
 }

@@ -15,6 +15,7 @@ import {ref, uploadBytes, listAll, getDownloadURL} from "firebase/storage"
 import {v4} from "uuid"
 import ProfilePictureContext from '../../pages/Profile/ProfilePictureContext';
 import ThemeContext from '../../ThemeContext';
+import AlertContext from '../AlertProvider';
 
 
 export default function Index() {
@@ -44,10 +45,11 @@ export default function Index() {
           "date": "0 min ago",
           "photo": url,
           "username": "Laith Nazzal",
-          "profilePicture": "assest/person/11.png"
+          "profilePicture": profilePictureContext.profilePicture
         };
         dataRef.ref().child("alll").child(counter).set(newData);
         setCounter(counter + 1);
+        handleOpenSuccessAlert()
         setPost("");
       });
   };
@@ -74,26 +76,7 @@ export default function Index() {
   const [counter,setCounter] = useState(3);
    
 
-  const handleChange = () => {
-    if (post !== "") {
-      
-      const newKey = "desc";
-      const newData = {
-        [newKey]: post,
-        "like":0,
-        "comment":0,
-        "date":"0 min ago",
-        "photo":"",
-        "username":"Laith Nazzal",
-        "profilePicture":"assest/person/1.jpeg"
 
-      };
-      dataRef.ref().child("all").child(counter).set(newData);
-      setCounter(counter + 1);
-      setPost("");
-      console.log(post);
-    }
-  };
 
   useEffect(()=>{
     dataRef.ref().child("all").on("value",data=>{
@@ -102,7 +85,6 @@ export default function Index() {
     })
   },[])
   
-  console.log(allValue)
     
 
   const shareOptions = [
@@ -122,6 +104,7 @@ export default function Index() {
   ));
   const profilePictureContext = useContext(ProfilePictureContext);
   const {Theme,selectedTheme,setSelectedTheme} = useContext(ThemeContext);
+  const {handleOpenSuccessAlert} = useContext(AlertContext)
 
   return (
   

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext, useContext  } from 'react';
+import React, { useState, useEffect, createContext, useContext } from 'react';
 import './styles.css';
 import Topbar from '../../components/topbar';
 import Leftbar from '../../components/Leftbar';
@@ -9,6 +9,7 @@ import { db } from '../../firebase-config';
 import firebase from 'firebase/compat/app';
 import ProfilePictureContext from './ProfilePictureContext';
 import ThemeContext from '../../ThemeContext';
+import AlertContext from '../../components/AlertProvider';
 
 const storage = firebase.storage();
 
@@ -45,6 +46,8 @@ export default function Index() {
         const downloadURL = await snapshot.ref.getDownloadURL();
         profilePictureContext.setProfilePicture(downloadURL);
         await db.collection('profile').doc('picture').set({ url: downloadURL });
+        handleOpenSuccessAlert()
+
       } catch (error) {
         console.error('Error uploading profile picture:', error);
       }
@@ -52,19 +55,14 @@ export default function Index() {
     fileInput.click();
   };
 
-  // const ProfilePicture = () => {
-    
-  
-  //   return (
-  //     <img src={profilePicture.profilePicture} alt="Profile" />
-  //   );
-  // };
-  const {Theme,selectedTheme,setSelectedTheme} = useContext(ThemeContext);
+
+  const { Theme, selectedTheme, setSelectedTheme } = useContext(ThemeContext);
+  const { handleOpenSuccessAlert } = useContext(AlertContext)
 
   return (
     <div>
       <Topbar />
-      <div className="Profile" style={{backgroundColor:Theme.main,color:Theme.secendary}}>
+      <div className="Profile" style={{ backgroundColor: Theme.main, color: Theme.secendary }}>
         <Leftbar />
         <div className="profileRight">
           <div className="profileRigthTop">
@@ -79,9 +77,9 @@ export default function Index() {
             <div className="profileInfo">
               <h4 className="profileInfoName">Laith Nazzal</h4>
               <span className="profileInfoDesc">Hello My Friends</span>
-              <button className="changeProfilePictureButton" 
-              onClick={handleProfilePictureChange}
-              style={{backgroundColor:Theme.third}}
+              <button className="changeProfilePictureButton"
+                onClick={handleProfilePictureChange}
+                style={{ backgroundColor: Theme.third }}
               >
                 Change Profile Picture
               </button>

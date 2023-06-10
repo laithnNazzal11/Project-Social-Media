@@ -1,11 +1,10 @@
-.feedd{
-   flex: 5.5; 
+.feedd {
+   flex: 5.5;
    max-width: 520px;
 }
 
 .feedWrapper {
-   padding:20px;
-   
+   padding: 20px;
+
 
 }
-

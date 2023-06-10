@@ -12,7 +12,7 @@ export function AlertContextProvider(props) {
     setSuccessAlert(false);
   };
 
-  
+
   return (
     <AlertContext.Provider
       value={{

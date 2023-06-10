@@ -10,7 +10,7 @@ import AlertContext from '../../components/AlertProvider';
 export default function Index() {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState(""); 
+  const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
   const [successMessage, setSuccessMessage] = useState('');
 
@@ -18,7 +18,7 @@ export default function Index() {
     navigate("/register");
   };
 
-  const {handleOpenSuccessAlert} = useContext(AlertContext)
+  const { handleOpenSuccessAlert } = useContext(AlertContext)
 
   const login = async () => {
     try {
@@ -56,7 +56,7 @@ export default function Index() {
               className='loginInput'
               onChange={(event) => {
                 setLoginEmail(event.target.value);
-                setErrorMessage(""); 
+                setErrorMessage("");
               }}
             />
 
@@ -67,11 +67,11 @@ export default function Index() {
               minLength={8}
               onChange={(event) => {
                 setLoginPassword(event.target.value);
-                setErrorMessage(""); 
+                setErrorMessage("");
               }}
             />
 
-            {errorMessage && <p className="errorMessage">{errorMessage}</p>} {}
+            {errorMessage && <p className="errorMessage">{errorMessage}</p>} { }
             {successMessage && <p>{successMessage}</p>}
 
             <button className='loginButton' onClick={login}>Log In</button>

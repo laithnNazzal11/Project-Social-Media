@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import './styles.css'
-import {Users} from '../../dummyData'
+import { Users } from '../../dummyData'
 import Closefreind from './CloseFriend'
 import FeedIcon from '@mui/icons-material/Feed';
 import ChatIcon from '@mui/icons-material/Chat';
@@ -34,41 +34,40 @@ export default function Index() {
     </li>
   ));
 
-  const {Theme,selectedTheme,setSelectedTheme} = useContext(ThemeContext);
+  const { Theme, selectedTheme, setSelectedTheme } = useContext(ThemeContext);
 
   const handleChangeTheme = () => {
-    if(selectedTheme=="dark") {
+    if (selectedTheme == "dark") {
       setSelectedTheme("light")
     }
     else {
       setSelectedTheme("dark")
     }
   }
-  
+
   return (
-    
-    <div className='leftbar' style={{backgroundColor:Theme.main,color:Theme.secendary}}>
+
+    <div className='leftbar' style={{ backgroundColor: Theme.main, color: Theme.secendary }}>
       <div className='burgerMenu'>
-              <MenuIcon/>
-       </div>
+        <MenuIcon />
+      </div>
 
       <div className="leftbarWrapper">
-        <button onClick={handleChangeTheme}>change mood</button>
         <ul className="leftbarList">
-           {sidebarItemsList}
+          {sidebarItemsList}
         </ul>
 
 
         <button className="leftbarButton">Show More</button>
-        <hr className="leftbarHr"/>
+        <hr className="leftbarHr" />
 
         <ul className="leftbatFriendList">
-        
-          
-          {Users.map((u)=> (
-          <Closefreind key={u.id} user={u}/>
 
-            ))}
+
+          {Users.map((u) => (
+            <Closefreind key={u.id} user={u} />
+
+          ))}
 
 
         </ul>

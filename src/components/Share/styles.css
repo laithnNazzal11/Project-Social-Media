@@ -2,18 +2,18 @@
     width: 100%;
     height: 170px;
     border-radius: 10px;
-    box-shadow: 0px 0px 16px -8px rgba(0,0,0,0.68);
+    box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
 
 
 }
 
 .shareWrapper {
-    padding:10px;
+    padding: 10px;
 }
 
 
 .shareProfileImg {
-    width:50px;
+    width: 50px;
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
@@ -32,13 +32,14 @@
     width: 80%;
 
 }
+
 .shareInput:focus {
     outline: none;
 
 }
 
-.shareHr{
-    margin:20px;
+.shareHr {
+    margin: 20px;
 }
 
 .shareButtom {
@@ -51,7 +52,7 @@
 .shareOptions {
     display: flex;
     margin-left: 20px;
-    
+
 }
 
 .shareOption {
@@ -75,22 +76,24 @@
 .shareButton {
     border: 0;
     background-color: green;
-    color:white;
+    color: white;
     padding: 7px;
     border-radius: 10%;
     font-weight: 500;
     margin-right: 20px;
     cursor: pointer;
 }
-.custom-file-input{
+
+.custom-file-input {
     display: inline-block;
-    width:95px;
+    width: 95px;
 }
 
 .custom-file-input::-webkit-file-upload-button {
     visibility: hidden;
-  }
-  .custom-file-input::before {
+}
+
+.custom-file-input::before {
     content: 'photo/videos';
     display: inline-block;
     background: linear-gradient(top, #f9f9f9, #e3e3e3);
@@ -99,17 +102,20 @@
     cursor: pointer;
     text-shadow: 1px 1px #fff;
     font-weight: 700;
-  }
-  .custom-file-input:hover::before {
+}
+
+.custom-file-input:hover::before {
     border-color: black;
-  }
-  .custom-file-input:hover::before {
+}
+
+.custom-file-input:hover::before {
     border-color: black;
-  }
-  .custom-file-input:active {
+}
+
+.custom-file-input:active {
     outline: 0;
-  }
-  .custom-file-input:active::before {
-    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
-  }
- 
+}
+
+.custom-file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}

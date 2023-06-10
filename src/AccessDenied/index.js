@@ -8,11 +8,11 @@ function AccessDenied() {
     navigate("/");
   };
 
-  
+
 
   return (
-    <Login/>
-   
+    <Login />
+
   );
 }
 

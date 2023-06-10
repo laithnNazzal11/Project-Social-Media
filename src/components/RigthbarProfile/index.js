@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import './styles.css'
 import OnlineFreind from '../Rigthbar/onlineFreinds'
-import {Users} from '../../dummyData'
+import { Users } from '../../dummyData'
 import ThemeContext from '../../ThemeContext';
 
 export default function Index() {
@@ -17,7 +17,7 @@ export default function Index() {
       <span className='rightbarInfoValue'>{info.value}</span>
     </div>
   ));
-  
+
 
   const userFriends = [
     { imgSrc: '/assest/person/1.jpeg', name: 'John Center' },
@@ -32,7 +32,7 @@ export default function Index() {
 
   const userFriendsList = userFriends.map((friend, index) => (
 
-    
+
     <div className='rigthbarFollowing' key={index}>
       <img className='rigthbarFollowingImg' alt='' src={friend.imgSrc}></img>
       <span className='rigthbarFollowingName'>{friend.name}</span>
@@ -41,34 +41,35 @@ export default function Index() {
   ));
 
   const ProfileRigthbar = () => {
-    
+
     return (
       <>
-      <h4 className='rigthbarTitle'>User information</h4>
-      <div className='rightbarInfo'>
-         {rightbarInfoItems}
-       <h4 className='rigthbarTitle'>User Friends</h4>
-        <div className='rgihtbarFollowingss'>
-         {userFriendsList}
+        <h4 className='rigthbarTitle'>User information</h4>
+        <div className='rightbarInfo'>
+          {rightbarInfoItems}
+          <h4 className='rigthbarTitle'>User Friends</h4>
+          <div className='rgihtbarFollowingss'>
+            {userFriendsList}
+          </div>
         </div>
-      </div>
-      
-        
-   
-   </>
-  )}
 
-  const {Theme,selectedTheme,setSelectedTheme} = useContext(ThemeContext);
+
+
+      </>
+    )
+  }
+
+  const { Theme, selectedTheme, setSelectedTheme } = useContext(ThemeContext);
 
   return (
     <>
-    
-    <div className='rigthbarr' style={{backgroundColor:Theme.main,color:Theme.secendary}}>
-      <div className='rigthbarWrapper'>
-        <ProfileRigthbar/> 
 
+      <div className='rigthbarr' style={{ backgroundColor: Theme.main, color: Theme.secendary }}>
+        <div className='rigthbarWrapper'>
+          <ProfileRigthbar />
+
+        </div>
       </div>
-    </div>
 
 
     </>

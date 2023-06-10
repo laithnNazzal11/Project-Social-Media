@@ -12,7 +12,9 @@ export const ThemeContextProvider = ({ children }) => {
     four : "#1d2226",
     five :"#1d2226",
     seven:"#1d2226",
-    eigth:"#fff"
+    eigth:"#fff",
+    nine: "white"
+
 
 
    
@@ -23,7 +25,8 @@ export const ThemeContextProvider = ({ children }) => {
     secendary : "#494949",
     four:"#f5f5f5",
     five:"#1877f2",
-    eigth:"#1877f2"
+    eigth:"#1877f2",
+    nine: "#1877f2"
   }
   const [Theme, setTheme] = useState(darkMode);
   useEffect(()=>{

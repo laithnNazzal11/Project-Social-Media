@@ -5,9 +5,9 @@ import Leftbar from '../../components/Leftbar';
 import Feed from '../../components/feed';
 import RigthbarHomePage from '../../components/Rigthbar';
 import ProfilePictureContext from '../Profile/ProfilePictureContext';
-import  {profilePicture} from '../Profile/index'
+import { profilePicture } from '../Profile/index'
 import useLocalStorage from 'use-local-storage'
-import {successMessage} from '../login'
+import { successMessage } from '../login'
 
 
 export default function Index({ successMessage }) {
@@ -28,16 +28,13 @@ export default function Index({ successMessage }) {
   return (
     <>
       {successMessage && <p>{successMessage}</p>}
-  
-      <Topbar/>
+
+      <Topbar />
       <div className="homeContainer">
-        
-
-
         <Leftbar />
         <Feed />
         <RigthbarHomePage />
       </div>
-      </> 
+    </>
   );
 }
