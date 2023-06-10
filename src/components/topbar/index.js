@@ -1,62 +1,74 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './styles.css'
-import SearchIcon from '@mui/icons-material/Search';
-import PersonIcon from '@mui/icons-material/Person';
-import ChatIcon from '@mui/icons-material/Chat';
-import NotificationsIcon from '@mui/icons-material/Notifications';
+import  { useState} from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import LeftbarfromTop from '../../components/LeftbarfromTop'
 import { useNavigate } from "react-router-dom";
 import Topbarleft from './topbarleft'
 import Topbarcenter from './topbarcenter'
 import Topbarrigth from './topbarRigth'
+import ProfilePictureContext from '../../pages/Profile/ProfilePictureContext';
+import ThemeContext from '../../ThemeContext';
+
 
 export default function Index() {
-    const navigate = useNavigate();
+  const profilePicture = useContext(ProfilePictureContext);
+  const navigate = useNavigate();
 
-    const goToProfilePage = () => {
-      navigate("/profile");
-    };
+  const logout = () => {
+    console.log('Logout function called');
+    localStorage.removeItem('token');
+    console.log('Token removed from localStorage');
+    navigate('/');
+  };
 
+  const goToProfilePage = () => {
+    navigate('/profile');
+  };
 
- 
+  const goToChatPage = () => {
+    navigate('/chat');
+  };
 
-    const navigateee = useNavigate();
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-    const goToChatPage = () => {
-      navigateee("/chat");
-    };
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
+  const profilePictureContext = useContext(ProfilePictureContext);
+
+  const {Theme,selectedTheme,setSelectedTheme} = useContext(ThemeContext);
+
   return (
     <>
-    <div className="topbarContanier">
-        <div className="topbarLeft">
-          <Topbarleft/>
+    <div className="topbarContanier" style={{backgroundColor:Theme.third,color:Theme.secendary}}>
+      <div className="topbarLeft">
+        <Topbarleft  />
+      </div>
+      <div className="topbarCenter">
+        <Topbarcenter />
+      </div>
+      <div className="topbarRigth">
+        <div className="TobIcon">
+          <Topbarrigth />
         </div>
-        
-        <div className="topbarCenter">
-          <Topbarcenter/>
-
-        </div>
-
-        <div className="topbarRigth">
-          <Topbarrigth/>
-
-
-            
-
-             <img src="/assest/person/11.png" alt="" className="topbarImg" onClick={goToProfilePage}></img>   
-           
-        </div>
-       
+        <img src={profilePictureContext.profilePicture} alt="" className="topbarImg" onClick={goToProfilePage} />
+        <button className="buttonLogOut" onClick={logout} style={{color:Theme.third}}>
+          Logout
+        </button>
+      </div>
     </div>
-
-    <div className='burgerMenu'>
-              <MenuIcon/>
+    <div className="burgerMenu">
+      <MenuIcon />
+      <button className="buttonLogOut2" onClick={logout} style={{color:Theme.third}}>
+        Logout
+      </button>
     </div>
-    <div class="leftfromTop">
-        <LeftbarfromTop/>
+    <div className="leftfromTop">
+      <LeftbarfromTop />
     </div>
     </>
-  )
+  );
 }
 

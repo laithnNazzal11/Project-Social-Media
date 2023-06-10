@@ -13,7 +13,6 @@ import firebase from "firebase/compat/app";
 import {storage} from "../../firebase-config";
 import {ref, uploadBytes, listAll, getDownloadURL} from "firebase/storage"
 import {v4} from "uuid"
-import 'firebase/compat/storage';
 import ProfilePictureContext from '../../pages/Profile/ProfilePictureContext';
 import ThemeContext from '../../ThemeContext';
 
@@ -21,6 +20,10 @@ import ThemeContext from '../../ThemeContext';
 export default function Index() {
 
 
+    const handleImage=(e)=> {
+      console.log(e.target.file)
+      setImage(e.target.files)
+    }
     
    const[image,setImage] = useState('')
    const[imageList,setImageList] = useState([])
@@ -41,23 +44,57 @@ export default function Index() {
           "date": "0 min ago",
           "photo": url,
           "username": "Laith Nazzal",
-          "profilePicture": profilePictureContext.profilePicture
+          "profilePicture": "assest/person/11.png"
         };
-        dataRef.ref().child("all").child(counter).set(newData);
+        dataRef.ref().child("alll").child(counter).set(newData);
         setCounter(counter + 1);
         setPost("");
       });
   };
     useEffect(() => {
-      listAll(imageListRef).then((response) => Promise.all(response.items.map((item) =>
+      listAll(imageListRef).then((response) => Promise.alll(response.items.map((item) =>
        getDownloadURL(item)))).then((urls) =>
         setImageList(urls));
     }, []);
+
+
+
+ 
+  
   const db = firebase.firestore().collection("dev")
   console.log(db);
+  const[data,setData] = useState([])
+  const[loader, setLoader] = useState(true)
+  
+
+
+  
   const [post, setPost] = useState("");
   const [allValue,setAllValue] = useState([])
   const [counter,setCounter] = useState(3);
+   
+
+  const handleChange = () => {
+    if (post !== "") {
+      
+      const newKey = "desc";
+      const newData = {
+        [newKey]: post,
+        "like":0,
+        "comment":0,
+        "date":"0 min ago",
+        "photo":"",
+        "username":"Laith Nazzal",
+        "profilePicture":"assest/person/1.jpeg"
+
+      };
+      dataRef.ref().child("all").child(counter).set(newData);
+      setCounter(counter + 1);
+      setPost("");
+      console.log(post);
+    }
+  };
+
   useEffect(()=>{
     dataRef.ref().child("all").on("value",data=>{
       const getData=Object.values(data.val())
@@ -87,14 +124,14 @@ export default function Index() {
   const {Theme,selectedTheme,setSelectedTheme} = useContext(ThemeContext);
 
   return (
-
+  
     
     <div className='share' style={{backgroundColor:Theme.third,color:Theme.secendary}}>
 
       <div className='shareWrapper'>
         <div className='shareTop'>
  
-          <img className='shareProfileImg'  alt="" src={profilePictureContext.profilePicture}/> 
+          <img className='shareProfileImg' src={profilePictureContext.profilePicture} alt="" /> 
             <input 
             value={post} onChange={(e)=>{setPost(e.target.value)}}
             placeholder="What's in your mind ?"  
@@ -114,7 +151,6 @@ export default function Index() {
       </div>
 
     </div>
-
   )
 }
 

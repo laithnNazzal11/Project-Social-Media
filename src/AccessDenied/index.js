@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import Login from '../pages/login'
 
 function AccessDenied() {
   const navigate = useNavigate();
@@ -10,10 +11,8 @@ function AccessDenied() {
   
 
   return (
-    <div>
-      Access Denied please login
-      <button onClick={goToLoginPage}>Login</button>
-    </div>
+    <Login/>
+   
   );
 }
 

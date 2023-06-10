@@ -1,15 +1,79 @@
-.share {
+.story {
     width: 100%;
-    height: 170px;
+    height: 120px;
     border-radius: 10px;
     box-shadow: 0px 0px 16px -8px rgba(0,0,0,0.68);
-
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1877f2;
+    
 
 }
 
 .shareWrapper {
     padding:10px;
 }
+
+.storyFriends {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+.storyImage {
+    position: relative;
+    width:75px;
+    height: 75px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    cursor: pointer;
+    border:5px solid white;
+    transition: all .3s ease-in-out; 
+}
+.friend{
+    position: relative;
+}
+.plus {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:25px;
+    height: 25px;
+    bottom: -10px;
+    right: 35%;
+    background-color: white;
+    color:#1877f2;
+    border-radius: 50%;
+    font-size: 1.3em;
+    border: 5px solid #1877f2;
+    cursor: pointer;
+    transition: all .3s ease-in-out; 
+
+}
+
+.storyImage::after {
+    content: '+';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+}
+
+.storyImage:hover {
+    border-color: rgb(18, 199, 18);
+    width:85px;
+    height: 85px;
+    
+}
+
+.plus:hover {
+    background-color: rgb(18, 199, 18);
+    color:white;
+    font-size: 1.5em;
+}
+
 
 
 .shareProfileImg {

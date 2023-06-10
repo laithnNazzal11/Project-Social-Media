@@ -1,12 +1,15 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import './styles.css'
 import OnlineFreind from '../Rigthbar/onlineFreinds'
 import {Users} from '../../dummyData'
+import ThemeContext from '../../ThemeContext';
 
-export default function index() {
+export default function Index() {
   const HomeRigthbar = () => {
+
+
     return (
-      <div className='home'>
+      <div className='home'  >
               <div className='birthdayContainer'>
           <img className='birthdayImg' src="/assest/gift.png" alt=""/>
           <span className='birthdayText'>
@@ -27,11 +30,12 @@ export default function index() {
       </div>
     )
   }
+  const {Theme,selectedTheme,setSelectedTheme} = useContext(ThemeContext);
 
   return (
     <>
     
-    <div className='rigthbar'>
+    <div className='rigthbar' style={{backgroundColor:Theme.main,color:Theme.secendary}}>
       <div className='rigthbarWrapper'>
         {<HomeRigthbar/>}
 

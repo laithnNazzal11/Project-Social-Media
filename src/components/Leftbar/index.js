@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './styles.css'
 import {Users} from '../../dummyData'
 import Closefreind from './CloseFriend'
@@ -12,7 +12,9 @@ import GroupIcon from '@mui/icons-material/Group';
 import EventIcon from '@mui/icons-material/Event';
 import GamesIcon from '@mui/icons-material/Games';
 import MenuIcon from '@mui/icons-material/Menu';
-export default function index() {
+import ThemeContext from '../../ThemeContext';
+
+export default function Index() {
   const sidebarItems = [
     { icon: <FeedIcon className="sidebarIcon" />, name: 'Feed' },
     { icon: <ChatIcon className="sidebarIcon" />, name: 'Chat' },
@@ -31,15 +33,27 @@ export default function index() {
       <span className="leftbarListItemText">{item.name}</span>
     </li>
   ));
+
+  const {Theme,selectedTheme,setSelectedTheme} = useContext(ThemeContext);
+
+  const handleChangeTheme = () => {
+    if(selectedTheme=="dark") {
+      setSelectedTheme("light")
+    }
+    else {
+      setSelectedTheme("dark")
+    }
+  }
   
   return (
     
-    <div className='leftbar'>
+    <div className='leftbar' style={{backgroundColor:Theme.main,color:Theme.secendary}}>
       <div className='burgerMenu'>
               <MenuIcon/>
        </div>
 
       <div className="leftbarWrapper">
+        <button onClick={handleChangeTheme}>change mood</button>
         <ul className="leftbarList">
            {sidebarItemsList}
         </ul>

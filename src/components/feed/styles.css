@@ -1,11 +1,31 @@
 .feed {
-   flex: 5.5; 
-   height: calc(100vh - 50px);
-}
+   flex: 5.5;
+   max-width: 674px;
+   transition: all .3s ease-in-out;
 
-.feedWrapper {
-   padding:20px;
-   
+ }
+ 
+ .feedWrapper {
+   padding: 20px;
+ }
+ 
+ /* Responsive styles */
+ @media (max-width: 768px) {
+   .feed {
+     flex: 1;
+   }
+ 
+   .feedWrapper {
+     padding: 10px;
+   }
+   .feed {
+    max-width: 1000px;
+  }
+ }
+ 
+ @media (max-width: 480px) {
 
-}
-
+   .feedWrapper {
+     padding: 5px;
+   }
+ }

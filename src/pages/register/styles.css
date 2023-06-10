@@ -91,3 +91,45 @@
     cursor: pointer;
 
 }
+
+
+@media  (max-width: 680px) {
+    .register {
+ 
+        background-color: #f0f2f5; 
+        align-items: center; 
+        justify-content: center;
+      }
+
+    .registerWrapper {
+        flex-direction: column;
+        width: 100% !important;
+        height: 100% !important;
+    
+        
+    }
+    .registerLogo,.registerDesc {
+        text-align: center;
+    }
+    .loginLeft{
+        margin-bottom: 50px;
+        margin-top: 0;
+    }
+
+    .registerDesc {
+        font-size: 20px !important; 
+     }
+
+
+     .registerBox {
+        height: 400px !important;
+        padding:20px !important;
+        background-color: white;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 100px;
+    }     
+
+}

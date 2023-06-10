@@ -9,11 +9,14 @@ export default function Index() {
     const goToChatPage = () => {
         navigate("/chat");
       };
+    const goToNovPage =()=> {
+      navigate("/Notifications");
+    }  
 
       const topBarIcons = [
         { icon: <PersonIcon />, badgeCount: 1 },
         { icon: <ChatIcon onClick={goToChatPage} />, badgeCount: 3 },
-        { icon: <NotificationsIcon />, badgeCount: 4 }
+        { icon: <NotificationsIcon onClick={goToNovPage}/>, badgeCount: 4 }
       ];
       
       const topBarIconItems = topBarIcons.map((item, index) => (
@@ -22,12 +25,13 @@ export default function Index() {
           <span className="topbarIconBadge">{item.badgeCount}</span>
         </div>
       ));
+
+      
   return (
     
     <div className="topbarIcon">
         {topBarIconItems}
-
-
+       
     </div>
 
   )

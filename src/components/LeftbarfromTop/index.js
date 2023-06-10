@@ -15,58 +15,58 @@ import MenuIcon from '@mui/icons-material/Menu';
 export default function index() {
   return (
     
-    <div className='leftbarr'>
+    <div className='leftbarrr'>
    
-      <div className="leftbarWrapper">
+      <div className="leftbarWrapperr">
 
 
-        <ul className="leftbarList">
+        <ul className="leftbarListt">
          
 
 
           <li className="leftbarListItemm">
             <FeedIcon className="sidebarIcon"/>
-            <span className="leftbarListItemText">Feed</span>
+            <span className="leftbarListItemTextt">Feed</span>
           </li>
 
           <li className="leftbarListItemm">
             <ChatIcon className="sidebarIcon"/>
-            <span className="leftbarListItemText">Chat</span>
+            <span className="leftbarListItemTextt">Chat</span>
           </li>
 
           <li className="leftbarListItemm">
             <PlayCircleIcon className="sidebarIcon"/>
-            <span className="leftbarListItemText">Videos</span>
+            <span className="leftbarListItemTextt">Videos</span>
           </li>
 
           <li className="leftbarListItemm">
             <GroupIcon className="sidebarIcon"/>
-            <span className="leftbarListItemText">Groub</span>
+            <span className="leftbarListItemTextt">Groub</span>
           </li>
 
           <li className="leftbarListItemm">
             <BookmarkIcon className="sidebarIcon"/>
-            <span className="leftbarListItemText">Bookmarks</span>
+            <span className="leftbarListItemTextt">Bookmarks</span>
           </li>
 
           <li className="leftbarListItemm">
             <ContactSupportIcon className="sidebarIcon"/>
-            <span className="leftbarListItemText">Questions</span>
+            <span className="leftbarListItemTextt">Questions</span>
           </li>
 
           <li className="leftbarListItemm">
             <WorkIcon className="sidebarIcon"/>
-            <span className="leftbarListItemText">Jops</span>
+            <span className="leftbarListItemTextt">Jops</span>
           </li>
 
           <li className="leftbarListItemm">
             <EventIcon className="sidebarIcon"/>
-            <span className="leftbarListItemText">Event</span>
+            <span className="leftbarListItemTextt">Event</span>
           </li>
 
           <li className="leftbarListItemm">
             <GamesIcon className="sidebarIcon"/>
-            <span className="leftbarListItemText">Courses</span>
+            <span className="leftbarListItemTextt">Courses</span>
           </li>
 
         </ul>

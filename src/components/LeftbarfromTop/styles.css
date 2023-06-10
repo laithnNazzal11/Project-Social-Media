@@ -1,13 +1,13 @@
-.leftbarr {
+.leftbarrr {
     display: flex;
     flex: 3;
     width:100%;
     height: calc(100vh - 50px);
     position: sticky;
-    background-color: ;
     top: 0;
     justify-content: center;
     text-align: center;
+    color: rgb(73, 73, 73);
     
 
 
